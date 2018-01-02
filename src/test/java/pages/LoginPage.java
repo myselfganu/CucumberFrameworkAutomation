@@ -12,9 +12,9 @@ import utilities.DriverFactory;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginPage extends DriverFactory{
+public class LoginPage {
 
-    WebDriver driver;
+    WebDriver driver = DriverFactory.getDriver();
     private static String url = "https://demo.civihrhosting.co.uk/welcome-page";
 
     public LoginPage(WebDriver driver){

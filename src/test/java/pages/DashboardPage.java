@@ -9,9 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.AbstractPage;
 import utilities.DriverFactory;
 
-public class DashboardPage extends DriverFactory{
+public class DashboardPage {
 
-    WebDriver driver;
+
+    WebDriver driver = DriverFactory.getDriver();
 
     public DashboardPage(WebDriver driver) {
         this.driver = driver;

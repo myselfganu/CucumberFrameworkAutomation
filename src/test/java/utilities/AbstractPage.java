@@ -4,7 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class AbstractPage extends DriverFactory {
+public class AbstractPage {
+
+    WebDriver driver = DriverFactory.getDriver();
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
@@ -45,7 +47,7 @@ public class AbstractPage extends DriverFactory {
      * This is the element where you want ot move the mouse cursor
      */
     public static void mouseHoverToElement(WebElement element){
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(DriverFactory.getDriver());
         actions.moveToElement(element);
         actions.build().perform();
     }
