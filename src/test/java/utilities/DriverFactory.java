@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
@@ -27,8 +28,11 @@ public class DriverFactory {
                 driver = new FirefoxDriver();
                 break;
             case "chrome":
-                driver = new ChromeDriver();
                 System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("headless");
+                chromeOptions.addArguments("window-size=1200x600");
+                driver = new ChromeDriver(chromeOptions);
                 break;
         }
     }
