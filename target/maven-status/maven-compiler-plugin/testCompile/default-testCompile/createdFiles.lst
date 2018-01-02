@@ -1,0 +1,8 @@
+steps\DashboardStepDefs.class
+steps\LoginStepDefs.class
+test\LoginTest.class
+pages\LoginPage.class
+utilities\AbstractPage.class
+pages\DashboardPage.class
+utilities\DriverFactory.class
+utilities\PropertyReader.class
