@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="test.LoginTest" time="1.512" errors="0" skipped="10">
+<testsuite tests="4" failures="0" name="EditAccountTest" time="0.719" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
@@ -63,47 +63,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Scenario: Check the HR Administrator user with valid credential is successfully logged in" name="Given the user is on the login page" time="0.162">
-    <skipped/>
-    <system-out>Feature: Check login functionality of HR Administrator page
-</system-out>
-  </testcase>
-  <testcase classname="Scenario: Check the HR Administrator user with valid credential is successfully logged in" name="And enter the username as &quot;civihr_admin&quot;" time="0.164">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check the HR Administrator user with valid credential is successfully logged in" name="And enter the password as &quot;civihr_admin&quot;" time="0.168">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check the HR Administrator user with valid credential is successfully logged in" name="And click on the Log in button" time="0.173">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check the HR Administrator user with valid credential is successfully logged in" name="Then check following menu labels are shown: home, Search, Staff, Tasks, Leave, Recruitment, Configure, Help" time="0.179">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check the HR Administrator user with valid credential is successfully logged in" name="Scenario: Check the HR Administrator user with valid credential is successfully logged in" time="0.181">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check the HR Administrator user with valid credential is successfully logged in" name="Scenario: Check the HR Administrator user with valid credential is successfully logged in" time="0.182"/>
-  <testcase classname="Scenario: Check that edit account page is shown to the user" name="Given user is logged using the credentials &quot;civihr_admin&quot; and &quot;civihr_admin&quot;" time="0.053">
-    <skipped/>
-    <system-out>
-  @login @regression @positive @smoke
-  Scenario: Check the HR Administrator user with valid credential is successfully logged in                     &amp;#27;[90m# login.feature:3&amp;#27;[0m
-    &amp;#27;[33mGiven &amp;#27;[0m&amp;#27;[33mthe user is on the login page&amp;#27;[0m
-    &amp;#27;[33mAnd &amp;#27;[0m&amp;#27;[33menter the username as &quot;civihr_admin&quot;&amp;#27;[0m
-    &amp;#27;[33mAnd &amp;#27;[0m&amp;#27;[33menter the password as &quot;civihr_admin&quot;&amp;#27;[0m
-    &amp;#27;[33mAnd &amp;#27;[0m&amp;#27;[33mclick on the Log in button&amp;#27;[0m
-    &amp;#27;[33mThen &amp;#27;[0m&amp;#27;[33mcheck following menu labels are shown: home, Search, Staff, Tasks, Leave, Recruitment, Configure, Help&amp;#27;[0m
-</system-out>
-  </testcase>
-  <testcase classname="Scenario: Check that edit account page is shown to the user" name="And hover mouse over the user image on the right corner" time="0.059">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check that edit account page is shown to the user" name="And click on Edit Account link" time="0.063">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check that edit account page is shown to the user" name="Scenario: Check that edit account page is shown to the user" time="0.064">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Check that edit account page is shown to the user" name="Scenario: Check that edit account page is shown to the user" time="0.064"/>
+  <testcase classname="Scenario: Check that edit account page is shown to the user" name="Given user is logged using the credentials &quot;civihr_admin&quot; and &quot;civihr_admin&quot;" time="0.027"/>
+  <testcase classname="Scenario: Check that edit account page is shown to the user" name="And hover mouse over the user image on the right corner" time="0"/>
+  <testcase classname="Scenario: Check that edit account page is shown to the user" name="And click on Edit Account link" time="0"/>
+  <testcase classname="Scenario: Check that edit account page is shown to the user" name="Scenario: Check that edit account page is shown to the user" time="0.692"/>
 </testsuite>

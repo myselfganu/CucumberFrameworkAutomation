@@ -3,16 +3,13 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilities.AbstractPage;
-import utilities.DriverFactory;
+import utilities.CommonMethod;
 
 public class DashboardPage {
 
-
-    WebDriver driver = DriverFactory.getDriver();
+    WebDriver driver;
 
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
@@ -29,7 +26,7 @@ public class DashboardPage {
     // General Xpaths
     private String menuItemGeneralXpath = "//li[contains(@class,'menumain') and contains(@class,'menuItemToFind')]";
 
-    // methods
+    // methods for step definitions
     public boolean checkIfMenuItemIsPresent(String menuItemToReplace){
         String currentMenuItemXpath = menuItemGeneralXpath.replace("menuItemToFind",menuItemToReplace);
         try {
@@ -41,8 +38,8 @@ public class DashboardPage {
     }
 
     public void mouseHoverTheUserMenu(){
-        AbstractPage.mouseHoverToElement(userMenu);
-        AbstractPage.mouseHoverToElement(editAccount);
+        CommonMethod.mouseHoverToElement(userMenu);
+        CommonMethod.mouseHoverToElement(editAccount);
     }
 
     public void mouserHoverAndClickOnTheEditAccountsLink(){

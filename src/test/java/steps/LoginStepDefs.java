@@ -7,17 +7,19 @@ import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import pages.DashboardPage;
 import pages.LoginPage;
-import utilities.AbstractPage;
+import utilities.CommonMethod;
 import utilities.DriverFactory;
-import utilities.PropertyReader;
 
 public class LoginStepDefs {
 
-    @Before
+    private WebDriver driver;
+    private LoginPage loginPage;
+
+    @Before // before every scenario
     public void beforeEveryScenario(){
-        WebDriver driver = DriverFactory.createNewDriver();
-        new AbstractPage(driver).getAdministratorUrl();
-        new AbstractPage(driver).maximizeWindow();
+        driver = DriverFactory.createNewDriver();
+        new CommonMethod(driver).init();
+        loginPage = new LoginPage(driver);
     }
 
     @After
@@ -27,31 +29,31 @@ public class LoginStepDefs {
 
     @Given("^the user is on the login page$")
     public void the_user_is_on_the_login_page() throws Throwable {
-        new LoginPage(DriverFactory.getDriver()).checkTheCurrentURL();
+        loginPage.checkTheCurrentURL();
     }
 
     @And("^enter the username as \"([^\"]*)\"$")
     public void enter_the_username_as(String username) throws Throwable {
-        new LoginPage(DriverFactory.getDriver()).enterUserName(username);
+        loginPage.enterUserName(username);
     }
 
     @And("^enter the password as \"([^\"]*)\"$")
     public void enter_the_password_as(String password) throws Throwable {
-        new LoginPage(DriverFactory.getDriver()).enterPassword(password);
+        loginPage.enterPassword(password);
     }
 
     @And("^click on the Log in button$")
     public void click_on_the_Log_in_button() throws Throwable {
-        new LoginPage(DriverFactory.getDriver()).clickOnLoginButton();
+        loginPage.clickOnLoginButton();
     }
 
     @Given("^user is logged using the credentials \"([^\"]*)\" and \"([^\"]*)\"$")
     public void user_is_logged_using_the_credentials_and(String username, String password) throws Throwable {
-        WebDriver driver = DriverFactory.getDriver();
-        new LoginPage(driver).checkTheCurrentURL();
-        new LoginPage(driver).enterUserName(username);
-        new LoginPage(driver).enterPassword(password);
-        new LoginPage(driver).clickOnLoginButton();
+        //WebDriver driver = DriverFactory.getDriver();
+        loginPage.checkTheCurrentURL();
+        loginPage.enterUserName(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
         new DashboardPage(driver).checkIfMenuItemIsPresent("home");
     }
 }

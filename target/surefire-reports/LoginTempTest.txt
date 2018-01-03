@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: test.LoginTest
+Test set: LoginTempTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 10, Time elapsed: 1.621 sec
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.732 sec
