@@ -130,6 +130,7 @@ public final class CommonMethod {
             driverPathCreate.append(os.toString().toLowerCase()).append("/").append(chromeDriver).append(chromeDriverLinuxBinaryExtension);
 
             System.setProperty(chromeDriverSetPropertyValue, String.valueOf(driverPathCreate));
+            
         }
     }
 
