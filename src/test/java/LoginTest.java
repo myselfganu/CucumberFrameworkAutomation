@@ -5,6 +5,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/in/raster/cucumber/features/" ,
-                    tags = "@loginFeature, @editAccount")
+                    tags = "@loginFeature , @editAccount")
 public class LoginTest {
 }

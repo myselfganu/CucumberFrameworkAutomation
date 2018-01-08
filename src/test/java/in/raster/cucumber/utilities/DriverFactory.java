@@ -27,13 +27,7 @@ public class DriverFactory {
                 driver = new FirefoxDriver();
                 break;
             case "chrome":
-                /*CurrentOS os =  CommonMethod.getOperatingSystem();
-                driver = createNeededDriver(os , browserPropertyValue);*/
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-                ChromeOptions chromeOptions = new ChromeOptions();
-                //chromeOptions.addArguments("headless");
-                chromeOptions.addArguments("window-size=1200x600");
-                driver = new ChromeDriver(chromeOptions);
+                driver = createNeededDriver(browserPropertyValue);
                 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
                 break;
         }
