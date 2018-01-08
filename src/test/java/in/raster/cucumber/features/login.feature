@@ -1,3 +1,4 @@
+@loginFeature
 Feature: Check login functionality of HR Administrator page
 @login @regression @positive @smoke
   Scenario: Check the HR Administrator user with valid credential is successfully logged in
@@ -8,6 +9,10 @@ Feature: Check login functionality of HR Administrator page
     Then check following menu labels are shown: home, Search, Staff, Tasks, Leave, Recruitment, Configure, Help
 
   #data tables negative scenarios
+  Scenario: Check that edit account page is shown to the user
+    Given user is logged using the credentials "civihr_admin" and "civihr_admin"
+    And hover mouse over the user image on the right corner
+    And click on Edit Account link
   
 
 

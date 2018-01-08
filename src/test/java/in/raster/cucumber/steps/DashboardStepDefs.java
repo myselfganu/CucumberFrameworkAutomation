@@ -1,18 +1,18 @@
-package steps;
+package in.raster.cucumber.steps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 
 import org.openqa.selenium.WebDriver;
-import pages.DashboardPage;
-import utilities.DriverFactory;
+import in.raster.cucumber.pages.DashboardPage;
+import in.raster.cucumber.utilities.DriverFactory;
 
 import java.util.List;
 
 public class DashboardStepDefs {
 
-    WebDriver driver = DriverFactory.getDriver();
+    WebDriver driver = DriverFactory.getCurrentDriverInstance();
 
     @Then("^check \"([^\"]*)\" menu label is shown$")
     public void check_menu_label_is_shown(String menuItem) throws Throwable {

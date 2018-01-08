@@ -1,12 +1,12 @@
-package pages;
+package in.raster.cucumber.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilities.CommonMethod;
-import utilities.PropertyReader;
+import in.raster.cucumber.utilities.CommonMethod;
+import in.raster.cucumber.utilities.PropertyReader;
 
 public class LoginPage {
 

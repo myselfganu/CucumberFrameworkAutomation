@@ -1,14 +1,14 @@
-package steps;
+package in.raster.cucumber.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
-import pages.DashboardPage;
-import pages.LoginPage;
-import utilities.CommonMethod;
-import utilities.DriverFactory;
+import in.raster.cucumber.pages.DashboardPage;
+import in.raster.cucumber.pages.LoginPage;
+import in.raster.cucumber.utilities.CommonMethod;
+import in.raster.cucumber.utilities.DriverFactory;
 
 public class LoginStepDefs {
 

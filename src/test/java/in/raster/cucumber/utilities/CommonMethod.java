@@ -1,4 +1,4 @@
-package utilities;
+package in.raster.cucumber.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public final class CommonMethod {
 
     private static WebDriver driver;
+
+    /*private enum OS {
+        WINDOWS, LINUX, MAC
+    };*/
 
     public CommonMethod(WebDriver driver) {
         this.driver = driver;
@@ -54,7 +58,7 @@ public final class CommonMethod {
      * This is the element where you want ot move the mouse cursor
      */
     public static void mouseHoverToElement(WebElement element){
-        Actions actions = new Actions(DriverFactory.getDriver());
+        Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.build().perform();
     }
@@ -74,6 +78,26 @@ public final class CommonMethod {
 
     public static void closeTheBrowser() {
         driver.close();
+    }
+
+    public static CurrentOS getOperatingSystem(){
+
+        String currentOS = System.getProperty("os.name").toLowerCase();
+        CurrentOS os = null;
+
+        if (currentOS.contains("win")) {
+            os = CurrentOS.WINDOWS;
+        } else if (currentOS.contains("nux") || currentOS.contains("nix") || currentOS.contains("aix")) {
+            os = CurrentOS.LINUX;
+        } else if (currentOS.contains("mac")) {
+            os = CurrentOS.MAC;
+        }
+        return os;
+    }
+
+    public static WebDriver createNeededDriver(CurrentOS os , String browserPropertyValue){
+
+        return driver;
     }
 
 }
