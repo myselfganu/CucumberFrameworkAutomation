@@ -1,77 +1,76 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("editAccount.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("login.feature");
 formatter.feature({
-  "line": 1,
-  "name": "Check the Edit Account functionality",
+  "line": 2,
+  "name": "Check login functionality of HR Administrator page",
   "description": "",
-  "id": "check-the-edit-account-functionality",
-  "keyword": "Feature"
+  "id": "check-login-functionality-of-hr-administrator-page",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "line": 1,
+      "name": "@loginFeature"
+    }
+  ]
 });
 formatter.before({
-  "duration": 52196795391,
+  "duration": 15389139532,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 3,
-  "name": "Check that edit account page is shown to the user",
+  "comments": [
+    {
+      "line": 17,
+      "value": "# test case made to test the fail scenario and the report creation"
+    }
+  ],
+  "line": 19,
+  "name": "Check that login button is diable",
   "description": "",
-  "id": "check-the-edit-account-functionality;check-that-edit-account-page-is-shown-to-the-user",
+  "id": "check-login-functionality-of-hr-administrator-page;check-that-login-button-is-diable",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 2,
-      "name": "@editAccount"
+      "line": 18,
+      "name": "@loginFalseFail"
     }
   ]
 });
 formatter.step({
-  "line": 4,
-  "name": "user is logged using the credentials \"civihr_admin\" and \"civihr_admin\"",
+  "line": 20,
+  "name": "the user is on the login page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 5,
-  "name": "hover mouse over the user image on the right corner",
-  "keyword": "And "
+  "line": 21,
+  "name": "check the login button has text \"LoginIn\"",
+  "keyword": "Then "
 });
-formatter.step({
-  "line": 6,
-  "name": "click on Edit Account link",
-  "keyword": "And "
+formatter.match({
+  "location": "LoginStepDefs.the_user_is_on_the_login_page()"
+});
+formatter.result({
+  "duration": 634952648,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "civihr_admin",
-      "offset": 38
-    },
-    {
-      "val": "civihr_admin",
-      "offset": 57
+      "val": "LoginIn",
+      "offset": 33
     }
   ],
-  "location": "LoginStepDefs.user_is_logged_using_the_credentials_and(String,String)"
+  "location": "LoginStepDefs.check_the_login_button_has_text(String)"
 });
 formatter.result({
-  "duration": 17375268000,
-  "status": "passed"
+  "duration": 183184796,
+  "error_message": "java.lang.AssertionError: Login button doesnot contain the text\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat in.raster.cucumber.pages.LoginPage.checkLoginButtonText(LoginPage.java:46)\r\n\tat in.raster.cucumber.steps.LoginStepDefs.check_the_login_button_has_text(LoginStepDefs.java:77)\r\n\tat ✽.Then check the login button has text \"LoginIn\"(login.feature:21)\r\n",
+  "status": "failed"
 });
-formatter.match({
-  "location": "DashboardStepDefs.hover_mouse_over_the_user_image_on_the_right_corner()"
-});
-formatter.result({
-  "duration": 1743790824,
-  "status": "passed"
-});
-formatter.match({
-  "location": "DashboardStepDefs.click_on_Edit_Account_link()"
-});
-formatter.result({
-  "duration": 3087043024,
-  "status": "passed"
-});
+formatter.embedding("image/png", "embedded0.png");
+formatter.write("Check that login button is diable");
 formatter.after({
-  "duration": 21788903590,
+  "duration": 2029125571,
   "status": "passed"
 });
 });

@@ -95,8 +95,9 @@ public final class CommonMethod {
         setDriverProperty(os, browserPropertyValue);
         ChromeOptions chromeOptions = new ChromeOptions();
         //chromeOptions.addArguments("headless"); // create a function for options
-        chromeOptions.addArguments("window-size=1200x600");
+        //chromeOptions.addArguments("window-size=1200x600");
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().deleteAllCookies();
         return driver;
     }
 

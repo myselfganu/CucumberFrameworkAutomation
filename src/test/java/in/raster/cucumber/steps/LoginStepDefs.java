@@ -1,19 +1,27 @@
 package in.raster.cucumber.steps;
 
+import com.sun.corba.se.impl.orbutil.ObjectUtility;
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import in.raster.cucumber.pages.DashboardPage;
 import in.raster.cucumber.pages.LoginPage;
 import in.raster.cucumber.utilities.CommonMethod;
 import in.raster.cucumber.utilities.DriverFactory;
 
+import java.io.File;
+
 public class LoginStepDefs {
 
     private WebDriver driver;
     private LoginPage loginPage;
+    //private Scenario scenario;
 
     @Before // before every scenario
     public void beforeEveryScenario(){
@@ -23,7 +31,11 @@ public class LoginStepDefs {
     }
 
     @After
-    public void afterEveryScenario(){
+    public void afterEveryScenario(Scenario scenario){
+        if (scenario.isFailed()){
+            final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.embed(screenshot, "image/png");
+        }
         DriverFactory.killDriver();
     }
 
@@ -55,5 +67,10 @@ public class LoginStepDefs {
         loginPage.enterPassword(password);
         loginPage.clickOnLoginButton();
         new DashboardPage(driver).checkIfMenuItemIsPresent("home");
+    }
+
+    @Then("^check the login button has text \"([^\"]*)\"$")
+    public void check_the_login_button_has_text(String textValue) throws Throwable {
+        loginPage.checkLoginButtonText(textValue);
     }
 }

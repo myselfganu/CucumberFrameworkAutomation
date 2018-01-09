@@ -42,4 +42,8 @@ public class LoginPage {
         CommonMethod.clickOnAButton(submitButton);
     }
 
+    public void checkLoginButtonText(String textValue){
+        Assert.assertTrue("Login button doesnot contain the text",submitButton.getText().equals(textValue));
+    }
+
 }
