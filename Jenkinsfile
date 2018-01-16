@@ -1,5 +1,11 @@
-node {
-    stage('Build') {
-        bat 'java -version'
+pipeline {
+    agent any 
+
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'make' 
+            }
+        }
     }
 }
