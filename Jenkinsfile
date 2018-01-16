@@ -1,11 +1,3 @@
-pipeline {
-    agent any 
-
-    stages {
-        stage('Build') { 
-            steps { 
-                sh 'make' 
-            }
-        }
-    }
+node {
+	echo "Hello World"
 }
