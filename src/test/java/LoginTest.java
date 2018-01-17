@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/in/raster/cucumber/features/" ,
-                    tags = "@loginFalseFail",
+                    tags = "@loginFeature",
                     format = {"pretty", "html:target/cucumber", "json:target/cucumber-report.json"})
 public class LoginTest {
 }
