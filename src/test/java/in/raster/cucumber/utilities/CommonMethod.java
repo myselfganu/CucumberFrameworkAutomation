@@ -7,20 +7,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.concurrent.TimeUnit;
-
 import static in.raster.cucumber.utilities.CurrentOS.LINUX;
 import static in.raster.cucumber.utilities.CurrentOS.MAC;
 import static in.raster.cucumber.utilities.CurrentOS.WINDOWS;
 
 public final class CommonMethod {
-
     private static WebDriver webDriver;
-
-    /*private enum OS {
-        WINDOWS, LINUX, MAC
-    };*/
 
     public CommonMethod(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -32,7 +25,7 @@ public final class CommonMethod {
 
     public static void getAdministratorUrl() {
         webDriver.get(new PropertyReader().readProperty("administratorURL"));
-    } // $$ property file reader n java
+    }
 
     public static void clearTextbox(WebElement element) {
         element.clear();
@@ -71,8 +64,6 @@ public final class CommonMethod {
         element.click();
     }
 
-    // move this to utilities class
-
     public static void closeTheBrowser() {
         webDriver.close();
     }
@@ -80,7 +71,7 @@ public final class CommonMethod {
     public static CurrentOS getOperatingSystem() {
         String currentOS = System.getProperty("os.name").toLowerCase();
         CurrentOS os = null;
-        if (currentOS.contains("win")) {  //switch case , enum
+        if (currentOS.contains("win")) {
             os = WINDOWS;
         } else if (currentOS.contains("nux") || currentOS.contains("nix") || currentOS.contains("aix")) {
             os = LINUX;
@@ -135,7 +126,6 @@ public final class CommonMethod {
     public static StringBuffer createDriverPath(String browserPropertyValue){
         String driverPathFromPropertyFile = new PropertyReader().readProperty("driverBinariesPath");
         StringBuffer driverPath = new StringBuffer(driverPathFromPropertyFile);
-
         driverPath.append(
                 getOperatingSystem().toString().toLowerCase()).append("/").append(getDriverName(browserPropertyValue)).append(getBinaryExtensionAccordingToTheOs()
         );
@@ -143,53 +133,16 @@ public final class CommonMethod {
     }
 
     public static void setDriverProperty(String browserPropertyValue) {
-        /*String driverPath = new PropertyReader().readProperty("driverBinariesPath"); // src/main/resources/
-        StringBuffer driverPathCreate = new StringBuffer(driverPath);*/
-
         switch(browserPropertyValue){
             case "CHROME":
-                System.setProperty(getDriverForSetPropertyValue(browserPropertyValue), String.valueOf(createDriverPath(browserPropertyValue)));
+                System.setProperty(getDriverForSetPropertyValue(browserPropertyValue),
+                        String.valueOf(createDriverPath(browserPropertyValue)));
                 break;
             case "FIREFOX":
-                System.setProperty(getDriverForSetPropertyValue(browserPropertyValue), String.valueOf(createDriverPath(browserPropertyValue)));
+                System.setProperty(getDriverForSetPropertyValue(browserPropertyValue),
+                        String.valueOf(createDriverPath(browserPropertyValue)));
                 break;
         }
-
-
-
-       // System.setProperty(chromeDriverSetPropertyValue, String.valueOf(driverPathCreate));
-
-        /*if (os == WINDOWS && browserPropertyValue.equals("CHROME")) {
-            //String chromeDriverWindowsBinaryExtension = new PropertyReader().readProperty("chromeDriverWindowsBinaryExtension");
-            String chromeDriverSetPropertyValue = new PropertyReader().readProperty("chromeDriverSetPropertyValue");
-            //String chromeDriver = new PropertyReader().readProperty("chromeDriver");
-
-            // src/main/resources/ <os> / <driver> / <binaryExtension>
-            driverPathCreate.append(os.toString().toLowerCase()).append("/").append(chromeDriver).append(chromeDriverWindowsBinaryExtension);
-
-            System.setProperty(chromeDriverSetPropertyValue, String.valueOf(driverPathCreate));
-
-
-        } else if (os == LINUX && browserPropertyValue.equals("chrome")) {
-            String chromeDriverLinuxBinaryExtension = new PropertyReader().readProperty("chromeDriverLinuxBinaryExtension");
-            String chromeDriverSetPropertyValue = new PropertyReader().readProperty("chromeDriverSetPropertyValue");
-            String chromeDriver = new PropertyReader().readProperty("chromeDriver");
-
-            driverPathCreate.append(os.toString().toLowerCase()).append("/").append(chromeDriver).append(chromeDriverLinuxBinaryExtension);
-
-            System.setProperty(chromeDriverSetPropertyValue, String.valueOf(driverPathCreate));
-
-        } else if (os == MAC && browserPropertyValue.equals("chrome")) {
-            String chromeDriverLinuxBinaryExtension = new PropertyReader().readProperty("chromeDriverLinuxBinaryExtension");
-            String chromeDriverSetPropertyValue = new PropertyReader().readProperty("chromeDriverSetPropertyValue");
-            String chromeDriver = new PropertyReader().readProperty("chromeDriver");
-
-            driverPathCreate.append(os.toString().toLowerCase()).append("/").append(chromeDriver).append(chromeDriverLinuxBinaryExtension);
-
-            System.setProperty(chromeDriverSetPropertyValue, String.valueOf(driverPathCreate));
-            
-        }*/
-
     }
 
     public void init() {

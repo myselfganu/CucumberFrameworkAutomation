@@ -37,5 +37,4 @@ public class DashboardStepDefs {
     public void click_on_Edit_Account_link() throws Throwable {
         new DashboardPage(driver).mouserHoverAndClickOnTheEditAccountsLink();
     }
-
 }
