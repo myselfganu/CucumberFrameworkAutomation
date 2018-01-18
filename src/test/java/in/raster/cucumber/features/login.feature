@@ -1,4 +1,4 @@
-@loginFeature
+@LoginFeature
 Feature: Check login functionality of HR Administrator page
 @login @regression @positive @smoke
   Scenario: Check the HR Administrator user with valid credential is successfully logged in

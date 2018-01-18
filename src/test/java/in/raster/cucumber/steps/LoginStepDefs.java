@@ -61,7 +61,7 @@ public class LoginStepDefs {
 
     @Given("^user is logged using the credentials \"([^\"]*)\" and \"([^\"]*)\"$")
     public void user_is_logged_using_the_credentials_and(String username, String password) throws Throwable {
-        //WebDriver driver = DriverFactory.getDriver();
+        //WebDriver webDriver = DriverFactory.getDriver();
         loginPage.checkTheCurrentURL();
         loginPage.enterUserName(username);
         loginPage.enterPassword(password);
