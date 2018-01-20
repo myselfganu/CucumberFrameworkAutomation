@@ -10,14 +10,14 @@ public class DriverFactory {
         switch (browserPropertyValue){
             case "FIREFOX":
                 CommonMethod.setDriverProperty(browserPropertyValue);
-                webDriver = new OurFirefoxDriver().getWebDriver();
+                webDriver = new CustomFirefoxDriver().getWebDriver();
                 break;
             case "CHROME":
                 CommonMethod.setDriverProperty(browserPropertyValue);
-                webDriver = new OurChromeDriver().getWebDriver();
+                webDriver = new CustomChromeDriver().getWebDriver();
                 break;
         }
-        return webDriver;
+        return webDriver; //throw an exception when the browsers mentioned get exhausted
     }
 
     public static WebDriver getCurrentDriverInstance() {

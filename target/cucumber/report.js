@@ -8,69 +8,120 @@ formatter.feature({
   "tags": [
     {
       "line": 1,
-      "name": "@loginFeature"
+      "name": "@LoginFeature"
     }
   ]
 });
 formatter.before({
-  "duration": 15389139532,
+  "duration": 20828816567,
   "status": "passed"
 });
 formatter.scenario({
-  "comments": [
-    {
-      "line": 17,
-      "value": "# test case made to test the fail scenario and the report creation"
-    }
-  ],
-  "line": 19,
-  "name": "Check that login button is diable",
+  "line": 4,
+  "name": "Check the HR Administrator user with valid credential is successfully logged in",
   "description": "",
-  "id": "check-login-functionality-of-hr-administrator-page;check-that-login-button-is-diable",
+  "id": "check-login-functionality-of-hr-administrator-page;check-the-hr-administrator-user-with-valid-credential-is-successfully-logged-in",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 18,
-      "name": "@loginFalseFail"
+      "line": 3,
+      "name": "@login"
+    },
+    {
+      "line": 3,
+      "name": "@regression"
+    },
+    {
+      "line": 3,
+      "name": "@positive"
+    },
+    {
+      "line": 3,
+      "name": "@smoke"
     }
   ]
 });
 formatter.step({
-  "line": 20,
+  "line": 5,
   "name": "the user is on the login page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 21,
-  "name": "check the login button has text \"LoginIn\"",
+  "line": 6,
+  "name": "enter the username as \"civihr_admin\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "enter the password as \"civihr_admin\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "click on the Log in button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "check following menu labels are shown: home, Search, Staff, Tasks, Leave, Recruitment, Configure, Help",
   "keyword": "Then "
 });
 formatter.match({
   "location": "LoginStepDefs.the_user_is_on_the_login_page()"
 });
 formatter.result({
-  "duration": 634952648,
+  "duration": 454378008,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "LoginIn",
-      "offset": 33
+      "val": "civihr_admin",
+      "offset": 23
     }
   ],
-  "location": "LoginStepDefs.check_the_login_button_has_text(String)"
+  "location": "LoginStepDefs.enter_the_username_as(String)"
 });
 formatter.result({
-  "duration": 183184796,
-  "error_message": "java.lang.AssertionError: Login button doesnot contain the text\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat in.raster.cucumber.pages.LoginPage.checkLoginButtonText(LoginPage.java:46)\r\n\tat in.raster.cucumber.steps.LoginStepDefs.check_the_login_button_has_text(LoginStepDefs.java:77)\r\n\tat ✽.Then check the login button has text \"LoginIn\"(login.feature:21)\r\n",
-  "status": "failed"
+  "duration": 959080516,
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png");
-formatter.write("Check that login button is diable");
+formatter.match({
+  "arguments": [
+    {
+      "val": "civihr_admin",
+      "offset": 23
+    }
+  ],
+  "location": "LoginStepDefs.enter_the_password_as(String)"
+});
+formatter.result({
+  "duration": 720316468,
+  "status": "passed"
+});
+formatter.match({
+  "location": "LoginStepDefs.click_on_the_Log_in_button()"
+});
+formatter.result({
+  "duration": 10994923518,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "home, Search, Staff, Tasks, Leave, Recruitment, Configure, Help",
+      "offset": 39
+    }
+  ],
+  "location": "DashboardStepDefs.check_following_menu_labels_are_shown(String\u003e)"
+});
+formatter.result({
+  "duration": 1260239898,
+  "status": "passed"
+});
 formatter.after({
-  "duration": 2029125571,
+  "duration": 736888634,
   "status": "passed"
 });
 });

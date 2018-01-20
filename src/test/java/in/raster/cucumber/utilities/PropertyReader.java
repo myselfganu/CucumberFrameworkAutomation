@@ -8,8 +8,8 @@ import java.util.Properties;
 
 public class PropertyReader {
 
-    Properties properties = new Properties();
-    InputStream inputStream = null;
+    private Properties properties = new Properties();
+    private InputStream inputStream = null;
 
     public PropertyReader(){
         loadProperties();
