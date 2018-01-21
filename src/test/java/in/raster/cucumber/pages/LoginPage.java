@@ -11,7 +11,7 @@ import in.raster.cucumber.utilities.PropertyReader;
 public class LoginPage {
 
     private WebDriver driver;
-
+    
     public LoginPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);

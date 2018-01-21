@@ -1,6 +1,5 @@
 package in.raster.cucumber.steps;
 
-import com.sun.corba.se.impl.orbutil.ObjectUtility;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -14,8 +13,6 @@ import in.raster.cucumber.pages.DashboardPage;
 import in.raster.cucumber.pages.LoginPage;
 import in.raster.cucumber.utilities.CommonMethod;
 import in.raster.cucumber.utilities.DriverFactory;
-
-import java.io.File;
 
 public class LoginStepDefs {
 
