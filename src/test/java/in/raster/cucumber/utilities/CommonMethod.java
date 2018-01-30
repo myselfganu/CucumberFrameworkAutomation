@@ -1,15 +1,19 @@
 package in.raster.cucumber.utilities;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.concurrent.TimeUnit;
+
 import static in.raster.cucumber.utilities.CurrentOS.LINUX;
-import static in.raster.cucumber.utilities.CurrentOS.MAC;
 import static in.raster.cucumber.utilities.CurrentOS.WINDOWS;
 
 public final class CommonMethod {
@@ -149,5 +153,42 @@ public final class CommonMethod {
         webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         getAdministratorUrl();
         maximizeWindow();
+    }
+
+    public void switchTOAlertAndClickOnAcceptButton(){
+        Alert alert = webDriver.switchTo().alert();
+        alert.accept();
+    }
+
+    public void switchTOAlertAndClickOnCancelButton(){
+        Alert alert = webDriver.switchTo().alert();
+        alert.dismiss();
+    }
+
+    public void rightMouseClickOnElement(WebElement element){
+        Actions actions = new Actions(webDriver);
+        actions.contextClick(element).perform();
+    }
+
+    public void dragAndDrop(WebElement source, WebElement target){
+        Actions action = new Actions(webDriver);
+        action.dragAndDrop(source, target).perform();
+    }
+
+    public void navigateBackInBrowser(){
+        webDriver.navigate().back();
+    }
+
+    public void navigateForwardInBrowser(){
+        webDriver.navigate().forward();
+    }
+
+    public void refreshBrowser(){
+        webDriver.navigate().refresh();
+    }
+
+    public void scrollDown(){
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor )webDriver;
+        javascriptExecutor.executeScript("window.scrollBy(0,4500)","");
     }
 }
